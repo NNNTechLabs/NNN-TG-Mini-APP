@@ -1,0 +1,240 @@
+.mystery-box-page {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  margin-bottom: 100px;
+
+  .mystery-box-custom-border {
+    z-index: -1;
+  }
+
+  .mystery-box-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .mystery-box-title {
+      font-weight: 100;
+      font-family: $superstar;
+      line-height: 1;
+      color: $white;
+    }
+
+    .mystery-box-info-icon {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .mystery-box-container {
+    position: relative;
+    height: 527px;
+    width: 100%;
+    margin-top: 5px;
+
+    .mystery-box-electric {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+    }
+
+    .mystery-box-excited {
+      position: absolute;
+      bottom: 75px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      &.mystery-box-excited-two {
+        bottom: 150px;
+        left: 25%;
+        z-index: 4;
+        width: 200px;
+      }
+      &.mystery-box-excited-three {
+        bottom: 150px;
+        left: 75%;
+        z-index: 4;
+        width: 200px;
+      }
+
+      &.mystery-box-excited-four {
+        bottom: 225px;
+        left: 50%;
+        z-index: 1;
+        width: 150px;
+      }
+
+      &.mystery-box-excited-five {
+        bottom: 225px;
+        left: 25%;
+        z-index: 1;
+        width: 175px;
+      }
+    }
+
+    .user-energy-count {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      position: absolute;
+
+      left: 0;
+      width: 110px;
+      svg {
+        width: 16px;
+        height: 16px;
+        top: -1.5px;
+        position: relative;
+        path {
+          fill: black !important;
+        }
+      }
+    }
+
+    .mystery-box-buttons {
+      display: flex;
+      width: 100%;
+
+      .mystery-box-count-wrapper {
+        display: flex;
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        width: 50%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 7.5px;
+        .count-minus-btn,
+        .count-plus-btn {
+          width: 40px;
+          height: 40px;
+          background-color: transparent;
+          border: none;
+          padding: 0;
+          img {
+            width: 100%;
+          }
+        }
+        span {
+          font-family: $superstar;
+          font-size: 5.4rem;
+          line-height: 0;
+          color: $white;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      .mysterybox-buy-btn {
+        position: absolute;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        bottom: 0;
+        background-color: #1a2834;
+        border: 1px solid $border-color;
+        padding: 5px 0;
+        span:nth-child(1) {
+          font-size: 20px;
+          font-family: $superstar;
+          color: $white;
+        }
+        span:nth-child(2) {
+          gap: 2.5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.4rem;
+          font-family: $pixellari;
+          color: #f7f7f760;
+
+          svg {
+            position: relative;
+            top: -2px;
+            width: 16px;
+            height: 16px;
+            path {
+              fill: #f7f7f760 !important;
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  .mystery-box-rewards-container {
+    margin-top: 20px;
+    position: relative;
+    height: 167px;
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    .next-rewards-info {
+      text-align: center;
+      font-size: 1.8rem;
+      color: $white;
+      line-height: 1.15;
+      span {
+        color: $main-color;
+      }
+    }
+
+    .gotomissions-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px 0;
+      background-color: #1a2834;
+      border: 1px solid $border-color;
+      font-size: 1.6rem;
+      font-family: $superstar;
+      color: $white;
+      width: 150px;
+      margin: 0 auto;
+      @include active-button;
+    }
+  }
+}
+
+.mystery-box-info {
+  width: 100%;
+  background-color: #1a2834;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  .mystery-box-cover-img {
+    position: relative;
+    top: -20px;
+  }
+
+  .mystery-box-questions {
+    width: 100%;
+    padding: 0 20px;
+    padding-bottom: 20px;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .faq-question {
+      font-weight: 100;
+      font-family: $superstar;
+      font-size: 2.4rem;
+    }
+    .faq-answer {
+      color: #a0aab4;
+    }
+  }
+}

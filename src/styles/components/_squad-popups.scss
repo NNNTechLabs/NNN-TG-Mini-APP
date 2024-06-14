@@ -1,0 +1,201 @@
+.create-squad {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+
+  .join-squad-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid $border-color;
+    background-color: #2b4153;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 30px;
+
+    .join-squad-titles {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1;
+      padding: 15px 0;
+
+      .join-squad-title {
+        font-size: 3.2rem;
+        font-family: $superstar;
+        font-weight: 100;
+        color: $white;
+      }
+      .join-squad-subtitle {
+        font-size: 1.6rem;
+        font-weight: 100;
+        color: #a0aab4;
+      }
+    }
+
+    .join-squad-input-wrapper {
+      width: 250px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      background-color: #a0aab420;
+      border: 2px solid $border-color;
+      svg {
+        width: 20px;
+        height: 15px;
+        position: relative;
+        left: 5px;
+        opacity: 0.5;
+      }
+      .join-squad-input {
+        height: 100%;
+        background-color: transparent;
+        display: flex;
+        border: none;
+        color: $white;
+        padding: 5px 10px;
+        padding-top: 10px;
+        font-size: 1.6rem;
+        &::placeholder {
+          color: #f7f7f730;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .join-squad-button {
+      width: 250px;
+      height: 40px;
+      font-size: 2rem;
+      font-family: $superstar;
+      background-color: $main-color;
+      border: none;
+      color: black;
+    }
+  }
+}
+
+.join-squad {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+
+  .join-squad-container {
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid $border-color;
+    background-color: #2b4153;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 30px;
+
+    .join-squad-titles {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1;
+      padding: 15px 0;
+
+      .join-squad-title {
+        font-size: 3.2rem;
+        font-family: $superstar;
+        font-weight: 100;
+        color: $white;
+      }
+      .join-squad-subtitle {
+        font-size: 1.6rem;
+        font-weight: 100;
+        color: #a0aab4;
+      }
+    }
+
+    .squad-info-wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      .squad-avatar-join {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .squad-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .total-energy {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          line-height: 1.2;
+          span {
+            font-size: 1.6rem;
+            color: $white;
+          }
+          .energy-count {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span {
+              font-size: 1.8rem;
+            }
+            svg {
+              width: 20px;
+              height: 20px;
+              position: relative;
+              top: -2px;
+              path {
+                fill: $white !important;
+              }
+            }
+          }
+        }
+        .rank-stats {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          line-height: 1.2;
+          span:nth-child(1) {
+            font-size: 1.6rem;
+            color: $white;
+          }
+
+          span:nth-child(2) {
+            font-size: 1.8rem;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .join-squad-button {
+      width: 250px;
+      height: 40px;
+      font-size: 2rem;
+      font-family: $superstar;
+      background-color: $main-color;
+      border: none;
+      color: black;
+    }
+  }
+}

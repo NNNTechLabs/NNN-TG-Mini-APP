@@ -1,0 +1,756 @@
+.leaderboard-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+  margin-bottom: 110px;
+  overflow-x: hidden;
+
+  .leaderboard-btns-wrapper {
+    display: flex;
+    gap: 10px;
+    .leaderboard-btn {
+      position: relative;
+      width: 120px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+
+      img {
+        z-index: -1;
+      }
+
+      &.active {
+        height: 32px;
+        align-items: flex-start;
+        color: black;
+      }
+    }
+  }
+
+  .leaderboard-user-info {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    .leaderboard-custom-border-one {
+      z-index: -1;
+    }
+
+    .leaderboard-user-info-left {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .leaderboard-username {
+        font-size: 2.4rem;
+        color: $white;
+      }
+
+      .leaderboard-user-tier {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1;
+        span {
+          font-size: 1.2rem;
+          font-family: $superstar;
+          color: $white;
+          line-height: 0.85;
+        }
+
+        .user-tier {
+          font-size: 3.6rem;
+          color: $white;
+        }
+      }
+    }
+
+    .leaderboard-user-info-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 12.5px 0;
+      padding-right: 25px;
+      width: 220px;
+      .leaderboard-miner-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        .squad-title,
+        .energy-title,
+        .referral-title {
+          display: flex;
+          align-items: center;
+          color: #f7f7f760;
+          gap: 2.5px;
+          .leaderboard-energy-icon,
+          .leaderboard-squad-icon,
+          .leaderboard-referral-icon {
+            position: relative;
+            top: -1.5px;
+            width: 15px;
+            height: 15px;
+            path {
+              fill: #f7f7f760 !important;
+            }
+          }
+        }
+        .user-info {
+          color: #f7f7f7;
+        }
+
+        .leaderboard-referral-btn {
+          display: flex;
+          background-color: transparent;
+          border: none;
+          position: absolute;
+          right: -25px;
+          top: -1.5px;
+        }
+      }
+    }
+  }
+
+  .miner-leaderboard {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    margin-top: 20px;
+    .miner-leaderboard-custom-border {
+      z-index: 0;
+    }
+    .miner-leaderboard-btns {
+      position: relative;
+      display: flex;
+      margin-top: 15px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      .miner-leaderboard-btn {
+        position: relative;
+        width: 105px;
+        height: 26px;
+        background-color: transparent;
+        border: none;
+        &:nth-child(2) {
+          span {
+            top: 1px;
+            font-size: 1.6rem;
+          }
+        }
+        &.active {
+          span {
+            color: $main-color;
+          }
+        }
+        .miner-leaderboard-btn-custom-border {
+          z-index: 0;
+        }
+        span {
+          font-size: 1.8rem;
+          color: $white;
+          z-index: 1;
+          position: relative;
+        }
+        &:nth-child(2) {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    .leaders-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 15px;
+      position: relative;
+      z-index: 10;
+      padding-bottom: 10px;
+      width: 100%;
+      overflow-y: auto;
+      max-height: 370px;
+
+      .leader-user {
+        position: relative;
+        width: 90%;
+        height: 35px;
+        .leader-container-custom-border {
+          z-index: 0;
+        }
+
+        .user-leader-info {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 10px;
+          height: 35px;
+
+          .user-leader-info-left {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            .user-rank {
+              color: $white;
+              font-size: 2rem;
+            }
+            .user-avatar {
+              width: 25px;
+              height: 25px;
+              border-radius: 50%;
+            }
+            .leaderboard-username {
+              color: $white;
+              font-size: 2rem;
+              margin-left: 5px;
+            }
+          }
+          .user-leader-info-right {
+            display: flex;
+            align-items: center;
+
+            svg {
+              width: 20px;
+              height: 20px;
+              position: relative;
+              top: -2px;
+              path {
+                fill: $white !important;
+              }
+            }
+            span {
+              color: $white;
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+
+    .current-user-stats {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 99%;
+      height: 50px;
+      background-color: $main-color;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid $border-color;
+      border-top: none;
+      .you-indicator {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-family: $superstar;
+        font-size: 4.2rem;
+        line-height: 1;
+        z-index: 0;
+        color: #00000020;
+      }
+      .current-user-stats-left {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding-left: 10px;
+        z-index: 1;
+        .current-user-rank {
+          color: black;
+          font-size: 3.2rem;
+        }
+        .current-user-avatar {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+        }
+        .current-user-username {
+          color: black;
+          font-size: 2.8rem;
+          margin-left: 5px;
+        }
+      }
+
+      .current-user-stats-right {
+        display: flex;
+        padding-right: 10px;
+        svg {
+          width: 25px;
+          height: 25px;
+          position: relative;
+          top: -2px;
+          path {
+            fill: black !important;
+          }
+        }
+      }
+    }
+  }
+
+  .squad-user-info {
+    position: relative;
+    width: 100%;
+    height: 149px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+
+    &.no-squad {
+      flex-direction: column;
+      padding: 10px 0;
+      .join-squad-message {
+        font-family: $superstar;
+        font-size: 2.8rem;
+        line-height: 0.85;
+        color: $white;
+        pointer-events: none;
+      }
+      .join-squad-description {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        line-height: 1;
+        color: #f7f7f780;
+        pointer-events: none;
+      }
+
+      .join-squad-btn {
+        position: relative;
+        border: none;
+        background-color: transparent;
+        z-index: 1;
+        width: 180px;
+        height: 33px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include active-button;
+        span {
+          position: relative;
+          top: 1px;
+          font-size: 1.6rem;
+          color: $white;
+          z-index: 1;
+        }
+      }
+    }
+    .squad-custom-border-one {
+      z-index: -1;
+    }
+
+    .squad-avatar {
+      width: 100px;
+      height: 100px;
+      background-position: center;
+      background-size: cover;
+      border-radius: 50%;
+    }
+
+    .squad-user-info-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+
+      padding: 10px;
+      .squad-name {
+        font-family: $superstar;
+        font-size: 2.4rem;
+        color: $white;
+        text-align: center;
+      }
+      .squad-energy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 1;
+        span {
+          color: #f7f7f780;
+          font-size: 1.4rem;
+        }
+        .squad-energy-value {
+          font-size: 1.8rem;
+          color: $white;
+        }
+      }
+
+      .rank-people-wrapper {
+        display: flex;
+        justify-content: space-between;
+        .squad-rank,
+        .squad-people {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          line-height: 1;
+          color: $white;
+          font-size: 1.4rem;
+          span {
+            color: #f7f7f780;
+            font-size: 1.4rem;
+          }
+          .rank-value,
+          .people-value {
+            font-size: 1.8rem;
+            color: $white;
+          }
+        }
+      }
+
+      .squad-buttons {
+        display: flex;
+        position: relative;
+        gap: 5px;
+        button {
+          position: relative;
+          width: 141px;
+          height: 19px;
+          border: none;
+          background-color: transparent;
+          font-size: 1.2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &.invite-btn {
+            color: $white;
+          }
+          &.leave-btn {
+            color: $red;
+          }
+          img {
+            z-index: -1;
+          }
+          &:nth-child(2) {
+            width: 45px;
+          }
+        }
+      }
+    }
+  }
+
+  .squad-leaderboard {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    margin-top: 20px;
+    .miner-leaderboard-custom-border {
+      z-index: 0;
+    }
+
+    .recommended-squads-container {
+      position: relative;
+      z-index: 1;
+      .recommended-squads-title {
+        font-weight: 100;
+        font-size: 2.4rem;
+        color: $white;
+        margin-top: 10px;
+        font-family: $superstar;
+        text-align: center;
+      }
+
+      .recommended-squads-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        overflow-y: auto;
+        max-height: 430px;
+
+        .recommended-squad {
+          position: relative;
+          width: 95%;
+          height: 40px;
+          display: flex;
+          padding: 0 10px;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px;
+          .recommended-squad-custom-border {
+            z-index: -1;
+          }
+
+          .recommended-squad-left {
+            display: flex;
+            align-items: center;
+            .recommended-squad-avatar {
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+            }
+            .recommended-squad-name {
+              color: $white;
+              font-size: 1.8rem;
+              margin-left: 5px;
+            }
+          }
+
+          .recommended-squads-points {
+            display: flex;
+            align-items: center;
+            color: $white;
+            font-size: 1rem;
+            position: absolute;
+            left: 60%;
+            transform: translateX(-50%);
+            svg {
+              width: 15px;
+              height: 15px;
+              position: relative;
+              top: -2px;
+              path {
+                fill: $white !important;
+              }
+            }
+          }
+
+          .join-btn {
+            background-color: transparent;
+            border: none;
+            color: $white;
+            font-family: $superstar;
+            font-size: 1.6rem;
+            line-height: 0.85;
+            position: relative;
+            top: 2px;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .squad-leaderboard-btns {
+      position: absolute;
+      display: flex;
+      width: 100%;
+      button {
+        background-color: transparent;
+        border: none;
+        position: relative;
+        &.active {
+          span {
+            color: $main-color;
+          }
+        }
+      }
+
+      .all-squads-btn {
+        position: relative;
+        border-right: 1px solid $border-color;
+        width: 125px;
+        height: 25px;
+        border-bottom: 1px solid $border-color;
+        span {
+          position: relative;
+          z-index: 1;
+          top: 1px;
+          color: $white;
+        }
+      }
+
+      .my-squad-btn {
+        width: 245px;
+        height: 25px;
+        position: relative;
+        border-bottom: 1px solid $border-color;
+        span {
+          position: absolute;
+          z-index: 1;
+          left: 5px;
+          color: $white;
+          top: 55%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    .miner-leaderboard-btns {
+      position: relative;
+      display: flex;
+      margin-top: 40px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      .miner-leaderboard-btn {
+        position: relative;
+        width: 105px;
+        height: 26px;
+        background-color: transparent;
+        border: none;
+        &:nth-child(2) {
+          span {
+            top: 1px;
+            font-size: 1.6rem;
+          }
+        }
+        &.active {
+          span {
+            color: $main-color;
+          }
+        }
+        .miner-leaderboard-btn-custom-border {
+          z-index: 0;
+        }
+        span {
+          font-size: 1.8rem;
+          color: $white;
+          z-index: 1;
+          position: relative;
+        }
+        &:nth-child(2) {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    .leaders-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 15px;
+      position: relative;
+      z-index: 10;
+      padding-bottom: 10px;
+      width: 100%;
+      overflow-y: auto;
+      max-height: 400px;
+      overscroll-behavior: contain;
+
+      &.my-squad-info {
+        margin-top: 40px;
+      }
+
+      .leader-user {
+        position: relative;
+        width: 90%;
+        height: 35px;
+        .leader-container-custom-border {
+          z-index: 0;
+        }
+
+        .user-leader-info {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 10px;
+          height: 35px;
+
+          .user-leader-info-left {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            .user-rank {
+              color: $white;
+              font-size: 2rem;
+            }
+            .user-avatar {
+              width: 25px;
+              height: 25px;
+              border-radius: 50%;
+            }
+            .leaderboard-username {
+              color: $white;
+              font-size: 1.2rem;
+              margin-left: 5px;
+            }
+          }
+          .user-leader-info-right {
+            display: flex;
+            align-items: center;
+
+            svg {
+              width: 20px;
+              height: 20px;
+              position: relative;
+              top: -2px;
+              path {
+                fill: $white !important;
+              }
+            }
+            span {
+              color: $white;
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+
+    .current-user-stats {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 99%;
+      height: 50px;
+      background-color: $main-color;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid $border-color;
+      border-top: none;
+      .you-indicator {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-family: $superstar;
+        font-size: 4.2rem;
+        line-height: 1;
+        z-index: 0;
+        color: #00000020;
+      }
+      .current-user-stats-left {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding-left: 10px;
+        z-index: 1;
+        .current-user-rank {
+          color: black;
+          font-size: 3.2rem;
+        }
+        .current-user-avatar {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+        }
+        .current-user-username {
+          color: black;
+          font-size: 2.8rem;
+          margin-left: 5px;
+        }
+      }
+
+      .current-user-stats-right {
+        display: flex;
+
+        svg {
+          width: 25px;
+          height: 25px;
+          position: relative;
+          top: -2px;
+          path {
+            fill: black !important;
+          }
+        }
+      }
+    }
+  }
+}

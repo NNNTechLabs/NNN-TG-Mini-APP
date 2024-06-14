@@ -1,0 +1,601 @@
+.raffle-page {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  margin-bottom: 100px;
+  .raffle-border-one,
+  .raffle-border-two,
+  .raffle-border-three {
+    z-index: -1;
+  }
+
+  .raffle-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .raffle-title {
+      font-weight: 100;
+      font-family: $superstar;
+      line-height: 1;
+      color: $white;
+    }
+
+    .raffle-tutorial-btn {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .node-raffle-container {
+    margin-top: 5px;
+    position: relative;
+    width: 100%;
+    height: 348px;
+
+    .node-raffle-top {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 10px;
+      .node-raffle-top-left {
+        display: flex;
+        flex-direction: column;
+        .raffle-round {
+          font-family: $superstar;
+          line-height: 0.85;
+        }
+        .closing-info {
+          color: #00000090;
+          font-size: 1.2rem;
+          position: relative;
+          line-height: 1;
+          left: -1px;
+        }
+      }
+
+      .raffle-calendar-info {
+        display: flex;
+        align-items: center;
+        gap: 2.5px;
+        position: relative;
+        top: 5px;
+
+        .calendar-icon {
+          width: 16px;
+          height: 16px;
+          position: relative;
+          top: -2px;
+        }
+        .calendar-info {
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    .node-raffle-inner {
+      display: flex;
+      flex-direction: column;
+      padding: 5px 10px;
+
+      .node-raffle-inner-top {
+        display: flex;
+        justify-content: space-between;
+        .node-raffle-user-usbs {
+          display: flex;
+          align-items: center;
+          position: relative;
+          gap: 5px;
+          .your-raffle-usbs {
+            position: relative;
+            top: 1px;
+            font-size: 1.6rem;
+            color: #f7f7f755;
+          }
+          .user-raffle-usb-amount {
+            color: $white;
+            font-size: 1.8rem;
+          }
+          .user-raffle-usb {
+            position: absolute;
+            right: -20px;
+            top: 8px;
+            width: 16px;
+          }
+        }
+
+        .auto-join-btn {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          line-height: 1;
+          gap: 0.25rem;
+          font-size: 1.6rem;
+          background-color: transparent;
+          border: none;
+          color: $white;
+          position: relative;
+          top: 5px;
+
+          .auto-join {
+            .on-off-btn-img {
+              width: 45px;
+            }
+          }
+        }
+      }
+    }
+
+    .node-raffle-inner-center {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 10px;
+      .raffle-machine-wrapper {
+        position: relative;
+        .raffle-usb-machine {
+          position: absolute;
+          width: 20px;
+          top: 0;
+          right: 0;
+        }
+        .raffle-machine-img {
+          width: 100px;
+        }
+      }
+    }
+
+    .node-raffle-infos-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+      gap: 0.25rem;
+      .announcement-date,
+      .participants,
+      .submitted-usbs {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5px;
+
+        .announcement-date-title,
+        .participants-title,
+        .submitted-usbs-title {
+          font-size: 1.6rem;
+          color: #f7f7f780;
+        }
+        .announcement-date-info,
+        .participants-info,
+        .submitted-usbs-info {
+          font-size: 1.6rem;
+          color: $white;
+          line-height: 1;
+        }
+      }
+    }
+
+    .auto-join-asset {
+      position: absolute;
+      bottom: -15px;
+      left: 0px;
+      transform: rotate(90deg);
+      animation: fade-in 0.5s ease-in-out;
+    }
+
+    .auto-join-asset-right {
+      position: absolute;
+      left: auto;
+      bottom: -20px;
+      right: -5px;
+      transform: rotate(-90deg);
+    }
+
+    .join-raffle-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: max-content;
+      margin: 0 auto;
+      margin-top: 10px;
+      padding: 5px 10px;
+      background-color: #1a2834;
+      border: 1px solid $border-color;
+      color: $white;
+      line-height: 1;
+      width: 175px;
+      top: 5px;
+      position: relative;
+
+      .auto-join-gif {
+        width: 175px;
+        position: absolute;
+        animation: fade-in 0.5s ease-in-out;
+      }
+      &.auto-join-on {
+        --borderWidth: 2px;
+        background: #1d1f20;
+        position: relative;
+        border-radius: var(--borderWidth);
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: calc(-1 * var(--borderWidth));
+          left: calc(-1 * var(--borderWidth));
+          height: calc(100% + var(--borderWidth) * 2);
+          width: calc(100% + var(--borderWidth) * 2);
+          background: linear-gradient(
+            60deg,
+            #fced1b,
+            #ebb902,
+            #f1e757,
+            #bcd074,
+            #5073b8,
+            #1098ad,
+            #07b39b,
+            #6fba82
+          );
+          border-radius: calc(2 * var(--borderWidth));
+          z-index: -1;
+          animation: animatedGradient 10s ease alternate infinite;
+          background-size: 300% 300%;
+        }
+
+        @keyframes animatedGradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      }
+      span:nth-child(1) {
+        font-size: 2rem;
+        font-family: $superstar;
+        line-height: 0.85;
+      }
+      span:nth-child(2) {
+        font-size: 1.2rem;
+        color: #a0aab4;
+      }
+    }
+  }
+
+  .my-history-title {
+    font-family: $superstar;
+    font-size: 2.8rem;
+    font-weight: 100;
+    color: $white;
+    margin-top: 10px;
+  }
+
+  .my-history-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .scroll-indicator {
+      position: absolute;
+      top: -30px;
+      right: 0;
+      color: #f7f7f780;
+      font-size: 1.4rem;
+    }
+    &.with-history {
+      height: 213px;
+      padding-bottom: 12.5px;
+
+      .my-history-content {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        height: 100%;
+        .my-history-item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 5px 10px;
+          &:not(:last-child) {
+            border-bottom: 1px solid $border-color;
+          }
+
+          .my-history-left {
+            display: flex;
+            flex-direction: column;
+            .my-history-name {
+              font-size: 2rem;
+              font-family: $superstar;
+              color: $white;
+              line-height: 0.85;
+            }
+
+            .history-raffle-calendar {
+              display: flex;
+              align-items: center;
+              color: #f7f7f780;
+              font-size: 1.2rem;
+              img {
+                filter: invert(1);
+                margin-right: 5px;
+                width: 16px;
+                height: 16px;
+                position: relative;
+                top: -2px;
+              }
+            }
+          }
+
+          .see-results-btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            color: $white;
+            font-size: 1.2rem;
+            gap: 2.5px;
+          }
+        }
+      }
+    }
+    &.no-history {
+      height: 99px;
+    }
+
+    .join-indicator-text {
+      text-align: center;
+      color: $white;
+      font-size: 1.8rem;
+    }
+
+    .get-raffle-btn {
+      display: flex;
+      border: 1px solid $border-color;
+      background-color: #1a2834;
+      font-family: $superstar;
+      font-size: 2rem;
+      padding: 5px 10px;
+      color: $white;
+      margin: 0 auto;
+    }
+
+    .my-history-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  .raffles-title {
+    font-family: $superstar;
+    font-size: 2.8rem;
+    font-weight: 100;
+    color: $white;
+    margin-top: 10px;
+  }
+
+  .raffles-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    .raffles-content {
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      height: 170px;
+      .raffle-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        &:not(:last-child) {
+          border-bottom: 1px solid $border-color;
+        }
+        .raffle-item-left {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          .raffle-item-name {
+            font-size: 2rem;
+            font-family: $superstar;
+            color: $white;
+            line-height: 0.85;
+          }
+          .raffle-item-calendar-info {
+            display: flex;
+            align-items: center;
+            color: #f7f7f780;
+            font-size: 1.2rem;
+            img {
+              filter: invert(1);
+              margin-right: 5px;
+              width: 16px;
+              height: 16px;
+              position: relative;
+              top: -2px;
+            }
+          }
+        }
+
+        .raffle-people-info {
+          position: absolute;
+          right: 10px;
+          font-size: 1.2rem;
+          color: #f7f7f780;
+        }
+      }
+    }
+  }
+}
+
+.raffle-win-page {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 140px);
+  border-bottom: 1px solid $border-color;
+  padding: 0 10px;
+  .raffle-win-border {
+    z-index: -1;
+  }
+
+  .raffle-name-title {
+    font-family: $superstar;
+    color: $white;
+    font-size: 2.8rem;
+  }
+
+  .winned-raffle-info {
+    display: flex;
+    flex-direction: column;
+    .winned-raffle-info-top {
+      display: flex;
+      flex-direction: column;
+      padding: 0 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $border-color;
+      .info-item {
+        display: flex;
+        justify-content: space-between;
+        .info-item-name {
+          color: #a0aab4;
+        }
+        .info-item-info {
+          color: $white;
+        }
+      }
+    }
+
+    .winned-raffle-info-bottom {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      .winning-message {
+        font-family: $superstar;
+        font-size: 2.4rem;
+        color: $white;
+        text-align: center;
+        line-height: 0.85;
+      }
+      .winning-info {
+        font-size: 1.6rem;
+        color: #a0aab4;
+        text-align: center;
+        span {
+          text-decoration: underline;
+          text-decoration-thickness: 2px;
+        }
+      }
+
+      .earned-items {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: calc(90vh - 400px);
+        position: relative;
+        .blur-element {
+          border-style: solid;
+          border-width: 325px 180px 0 180px;
+          border-color: #79fafd40 transparent transparent transparent;
+          transform: rotate(0deg);
+          z-index: -1;
+          position: absolute;
+
+          filter: blur(50px);
+        }
+        .earned-item {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          img {
+            width: 100px;
+            height: 125px;
+            object-fit: contain;
+          }
+          .earned-item-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            line-height: 1;
+            color: $white;
+            font-size: 2rem;
+          }
+        }
+      }
+
+      .gotomypage-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        padding: 5px 0;
+        background-color: #1a2834;
+        border: 1px solid $border-color;
+        color: $white;
+        font-size: 2rem;
+        font-family: $superstar;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.raffle-info-popup {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 140px);
+  z-index: 9999;
+  margin-bottom: 100px;
+  top: 25px;
+
+  .raffle-info-border {
+    z-index: -1;
+  }
+
+  .raffle-info-cover-img {
+    width: 100%;
+    position: relative;
+    object-fit: contain;
+    top: -25px;
+  }
+
+  .raffle-info-texts {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow: auto;
+    height: calc(100vh - 380px);
+
+    .raffle-question {
+      font-family: $superstar;
+      font-size: 2.8rem;
+      color: $white;
+    }
+
+    .raffle-answer {
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: #f7f7f780;
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

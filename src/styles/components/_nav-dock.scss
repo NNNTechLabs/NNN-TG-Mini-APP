@@ -1,0 +1,104 @@
+.nav-dock {
+  width: 99%;
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  @include media(">=768px") {
+    max-width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .dock-items {
+    background-color: #2b4153;
+    border: 1px solid #a0aab4;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    font-size: 1.4rem;
+    position: relative;
+    justify-content: space-between;
+    .dock-item {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      .red-dot-element {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        background-color: #cc0505;
+        top: -5px;
+        right: -5px;
+        z-index: 10;
+        border-radius: 50%;
+        border: 1px solid $main-color;
+        &.middle-dot {
+          top: 0;
+          right: 0;
+        }
+      }
+      &.dock-raffle {
+        position: relative;
+        top: -5px;
+      }
+
+      &:nth-child(2) {
+        position: relative;
+        left: 5px;
+      }
+
+      &:nth-child(4) {
+        position: relative;
+        right: 5px;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: -5px;
+      }
+
+      .dock-label {
+        position: absolute;
+        bottom: -10px;
+        width: max-content;
+        font-size: 1.5rem;
+      }
+      .raffle-label {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    a {
+      text-decoration: none;
+      color: #f7f7f790;
+      height: 40px;
+
+      position: relative;
+      display: flex;
+      align-items: center;
+      img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -3.5px;
+      }
+
+      &.active {
+        color: $main-color;
+      }
+    }
+  }
+}

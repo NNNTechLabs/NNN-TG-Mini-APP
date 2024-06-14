@@ -1,0 +1,156 @@
+@import "variables";
+@import "mixins";
+
+// Pages
+@import "pages/home";
+@import "pages/my-page";
+@import "pages/leaderboard";
+@import "pages/raffle";
+@import "pages/mystery-box";
+@import "pages/energy-station";
+@import "pages/mission-popup";
+
+// Components
+@import "toast";
+@import "components/nav";
+@import "components/telegram-announcement";
+@import "components/login-popup";
+@import "components/signup-popup";
+@import "components/loader";
+@import "components/nav-dock";
+@import "components/squad-popups";
+@import "components/no-logged-in";
+@import "components/circular-progress";
+@import "components/energy-progress";
+@import "components/areyousure-popup";
+@import "components/transaction-success";
+@import "components/pagination";
+
+// Fonts
+@font-face {
+  font-family: "Superstar";
+  src: local("Superstar"), url("/fonts/Superstar.woff2") format("woff2"),
+    url("/fonts/Superstar.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pixellari";
+  src: local("Pixellari"), url("/fonts/Pixellari.woff2") format("woff2"),
+    url("/fonts/Pixellari.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+  background-color: $bg-color;
+  user-select: none; // Disable selection
+  font-family: $pixellari;
+
+  @include media(">=768px") {
+    margin: 0 auto;
+    max-width: 768px;
+  }
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.asterisk {
+  color: $red;
+}
+
+.custom-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.suspense-loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .loading svg polyline {
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .loading svg polyline#back {
+    fill: none;
+    stroke: #ff4d5033;
+  }
+
+  .loading svg polyline#front {
+    fill: none;
+    stroke: $main-color;
+    stroke-dasharray: 48, 144;
+    stroke-dashoffset: 192;
+    animation: dash_682 1.4s linear infinite;
+  }
+
+  @keyframes dash_682 {
+    72.5% {
+      opacity: 0;
+    }
+
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}

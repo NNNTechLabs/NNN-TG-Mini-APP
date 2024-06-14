@@ -1,0 +1,55 @@
+.areyousure-popup {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 15999;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .areyousure-content {
+    display: flex;
+    flex-direction: column;
+    background-color: $bg-color;
+    color: white;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $border-color;
+    @include pixel-border;
+    border-radius: 5px;
+    width: 95%;
+    .areyousure-title {
+      font-weight: 100;
+      font-size: 2.8rem;
+      font-family: $superstar;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .areyousure-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      button {
+        @include pixel-border;
+        padding: 0px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 2.4rem;
+        width: 100px;
+        font-family: $superstar;
+        color: white;
+        &:first-child {
+          background-color: $red;
+        }
+        &:last-child {
+          background-color: $green;
+        }
+      }
+    }
+  }
+}

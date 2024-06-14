@@ -1,0 +1,95 @@
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .wallet-login-wrapper,
+  .twitter-login-wrapper,
+  .username-wrapper,
+  .referral-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .wallet-login-label {
+      color: #00c48d;
+    }
+    .check-icon {
+      position: absolute;
+      right: -20px;
+    }
+    span {
+      font-size: 2rem;
+    }
+
+    .wallet-login-btn,
+    .twitter-login-btn {
+      position: relative;
+      background-image: url("/assets/login-btn.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 250px;
+      height: 50px;
+      background-position: center;
+      border: none;
+      background-color: transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $white;
+
+      font-size: 1.6rem;
+      z-index: 10;
+      top: -5px;
+      .ton-connect-icon {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        left: 5px;
+      }
+      .login-popup-btn-text {
+        text-align: center;
+        position: absolute;
+        left: 55%;
+        transform: translateX(-50%);
+      }
+      img {
+        width: 35px;
+      }
+    } // Input
+    .login-popup-input {
+      border: 2px solid #a0aab450;
+      background-color: #d9d9d905;
+      width: 250px;
+      height: 40px;
+      color: $white;
+      padding: 0 5px;
+      &::placeholder {
+        color: #a0aab420;
+      }
+    }
+    .twitter-login-btn {
+      background-image: url("/assets/twitter-btn.png");
+    }
+  }
+
+  .referral-wrapper {
+    position: relative;
+    top: 5px;
+  }
+
+  .signup-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 2px solid #a0aab450;
+    background-color: #e6cc00;
+    height: 40px;
+    color: #000;
+    padding: 0 5px;
+    position: relative;
+    top: 30px;
+    cursor: pointer;
+  }
+}

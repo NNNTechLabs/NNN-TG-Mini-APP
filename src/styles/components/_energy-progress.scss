@@ -1,0 +1,22 @@
+.progress-container {
+  position: absolute;
+  display: inline-block;
+  width: 120px;
+  height: 60px;
+  top: 60px;
+  left: 35px;
+}
+
+.progress-ring__background,
+.progress-ring__progress {
+  transition: 0.35s stroke-dashoffset;
+}
+
+.progress-text {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #a0aab4;
+  font-size: 2rem;
+}

@@ -1,0 +1,36 @@
+@mixin pixel-border {
+  clip-path: polygon(
+    0px calc(100% - 4px),
+    2px calc(100% - 4px),
+    2px calc(100% - 2px),
+    4px calc(100% - 2px),
+    4px 100%,
+    calc(100% - 4px) 100%,
+    calc(100% - 4px) calc(100% - 2px),
+    calc(100% - 2px) calc(100% - 2px),
+    calc(100% - 2px) calc(100% - 4px),
+    100% calc(100% - 4px),
+    100% 4px,
+    calc(100% - 2px) 4px,
+    calc(100% - 2px) 2px,
+    calc(100% - 4px) 2px,
+    calc(100% - 4px) 0px,
+    4px 0px,
+    4px 2px,
+    2px 2px,
+    2px 4px,
+    0px 4px
+  );
+}
+
+@function randomNum($min, $max) {
+  $range: $max - $min + 1;
+  $rand: random($range) + $min - 1;
+  @return $rand;
+}
+
+@mixin active-button {
+  &:active {
+    transform: scale(0.9);
+  }
+}

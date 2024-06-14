@@ -1,0 +1,183 @@
+.login-popup {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 14000;
+
+  .login-popup-content {
+    position: absolute;
+    bottom: 0;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    background-color: #1a2834;
+    height: 500px;
+    padding: 10px 0;
+    -webkit-box-shadow: 0px -1px 50px -6px rgba(230, 204, 0, 0.66);
+    -moz-box-shadow: 0px -1px 50px -6px rgba(230, 204, 0, 0.66);
+    box-shadow: 0px -1px 50px -6px rgba(230, 204, 0, 0.66);
+    overflow: hidden;
+    max-width: 768px;
+    left: 50%;
+
+    .signup-back-button {
+      border: none;
+      background-color: transparent;
+      color: #f7f7f770;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      position: absolute;
+      left: 15px;
+      top: 15px;
+    }
+
+    .close-icon {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+      path {
+        fill: #f7f7f770;
+      }
+    }
+
+    .login-border-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .login-border {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: scaleY(3);
+      pointer-events: none;
+    }
+
+    .login-border-2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: scaleY(3);
+      pointer-events: none;
+    }
+
+    .login-popup-titles {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 5px;
+
+      .login-popup-title {
+        font-size: 3.6rem;
+        font-family: $superstar;
+        line-height: 1;
+
+        color: $main-color;
+        font-weight: 100;
+      }
+
+      .login-popup-subtitle {
+        font-size: 1.6rem;
+        line-height: 1.25;
+        &.sign-up-subtitle {
+          color: #f7f7f780;
+          font-size: 1.6rem;
+          position: relative;
+          top: -0.5rem;
+          line-height: 1.15;
+          .bold-text {
+            color: $main-color;
+          }
+          .asterisk {
+            color: $red;
+          }
+        }
+
+        .sign-up-link {
+          color: $main-color;
+          text-decoration: underline;
+          text-decoration-thickness: 2px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .login-popup-btns-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .login-btn {
+        position: relative;
+        background-image: url("/assets/login-btn.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 250px;
+        height: 50px;
+        background-position: center;
+        border: none;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $white;
+        font-size: 1.6rem;
+        z-index: 10;
+
+        .login-popup-btn-text {
+          text-align: center;
+          position: absolute;
+          left: 55%;
+          transform: translateX(-50%);
+        }
+        img {
+          width: 35px;
+        }
+      }
+
+      .all-wallets-container {
+        background-image: url("/assets/all-wallets-container.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding: 10px;
+        width: 200px;
+        height: 75px;
+        position: absolute;
+        bottom: -70px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+
+        .all-wallet-btn {
+          display: flex;
+          flex-direction: column;
+          font-size: 1rem;
+          border: none;
+          background-color: transparent;
+          color: $white;
+          line-height: 1;
+          gap: 5px;
+        }
+      }
+    }
+  }
+}
+
+.signup-loader {
+  position: relative;
+  top: 20px;
+}

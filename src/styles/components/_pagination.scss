@@ -1,0 +1,29 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 8px;
+  width: 100%;
+
+  .page-number {
+    border: none;
+    background-color: #f7f7f750;
+    color: white;
+    cursor: pointer;
+    @include pixel-border;
+    @include active-button;
+    text-align: center;
+    padding: 8px 12px;
+    &.active {
+      background-color: $main-color;
+      color: white;
+    }
+  }
+
+  button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}

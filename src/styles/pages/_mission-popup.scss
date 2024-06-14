@@ -1,0 +1,201 @@
+.mission-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+  margin-bottom: 100px;
+
+  // titles
+  .mission-popup-titles {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    h2 {
+      font-weight: 100;
+      font-family: $superstar;
+      font-size: 3.6rem;
+      text-align: center;
+      color: $white;
+    }
+    p {
+      font-size: 1.6rem;
+      text-align: center;
+      color: #c9c9c9;
+    }
+  }
+
+  .user-wallet-wrapper {
+    position: relative;
+    width: 275px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+
+    .wallet-custom-border {
+      z-index: -1;
+    }
+
+    .wallet-icon {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 5px;
+    }
+
+    .user-wallet-address {
+      position: absolute;
+      left: 55%;
+      transform: translateX(-50%);
+      color: #c9c9c9;
+      font-family: $superstar;
+      font-size: 2rem;
+    }
+  }
+
+  .play-explore-wrapper {
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+    justify-content: center;
+    gap: 10px;
+
+    button {
+      @include pixel-border;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: $superstar;
+      color: $main-color;
+      gap: 1rem;
+      background-color: #1f1f1f;
+      border: none;
+      font-size: 2.4rem;
+      width: 150px;
+      .explore-icon {
+        position: relative;
+        top: -2.5px;
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  .game-missions-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    gap: 1.2rem;
+    .popup-game-mission-card {
+      position: relative;
+      width: 103%;
+      height: 126px;
+      display: flex;
+      .game-mission-custom-border {
+        z-index: -1;
+      }
+
+      .game-mission-card-img {
+        min-width: 100px;
+        max-width: 100px;
+        object-fit: cover;
+        clip-path: polygon(
+          8px 1%,
+          100% 1px,
+          100% 20%,
+          100% 80%,
+          100% 125px,
+          8px 125px,
+          1px 118px,
+          1px 8px
+        );
+      }
+
+      .mission-completed-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        width: 100%;
+        line-height: 1;
+        font-size: 2rem;
+        padding: 0 10px;
+      }
+
+      .game-mission-card-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .game-mission-info-left {
+          display: flex;
+          flex-direction: column;
+
+          padding: 10px;
+          height: 100%;
+          h3 {
+            font-weight: 100;
+            line-height: 1;
+            max-width: 150px;
+            width: 150px;
+            color: $white;
+            font-size: 2rem;
+          }
+
+          .total-energy-points {
+            display: flex;
+            align-items: center;
+            position: relative;
+            top: 10px;
+            color: $white;
+            font-family: $superstar;
+            font-size: 2rem;
+            svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
+
+          .expiration {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            svg {
+              position: relative;
+              top: -2px;
+            }
+            span {
+              font-size: 1.4rem;
+              color: #f7f7f760;
+            }
+          }
+        }
+
+        .game-mission-verify-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: transparent;
+          position: relative;
+          border: none;
+          font-size: 2rem;
+          font-family: $superstar;
+          margin-right: 15px;
+          width: 75px;
+          height: 75px;
+          color: black;
+          @include active-button;
+          svg {
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}

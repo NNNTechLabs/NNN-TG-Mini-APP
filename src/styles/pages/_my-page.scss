@@ -1,0 +1,379 @@
+.my-page {
+  margin: 0 10px;
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .my-page-title {
+    margin-top: 5px;
+    font-size: 3.2rem;
+    line-height: 0.85;
+    font-family: $superstar;
+    font-weight: 100;
+    color: $white;
+  }
+  .profile-info-container {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    margin-top: 5px;
+    display: flex;
+    gap: 15px;
+    .custom-border-profile {
+      z-index: -1;
+    }
+    .profile-info-left {
+      background-image: url("/assets/border-asset-profile.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 90px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: $superstar;
+      position: relative;
+      .tier-text {
+        font-size: 1.2rem;
+        color: $white;
+        position: absolute;
+        top: 7.5px;
+        font-family: $pixellari;
+      }
+      .tier-level {
+        font-size: 3.6rem;
+        color: $white;
+      }
+    }
+
+    .profile-info-right {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding-left: 15px;
+
+      .profile-info-user-info {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        .user-name {
+          color: $white;
+          font-size: 2.4rem;
+          position: relative;
+          top: 5px;
+        }
+
+        .user-codes {
+          display: flex;
+          flex-direction: column;
+          line-height: 1;
+          gap: 5px;
+          position: relative;
+          bottom: 10px;
+          .user-referral-id,
+          .user-squad-name {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            span:first-child {
+              color: #f7f7f750;
+            }
+            span:last-child {
+              color: $white;
+            }
+          }
+        }
+      }
+
+      .copy-referral-btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        width: 80px;
+        position: relative;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .balance-info-container {
+    position: relative;
+    height: 203px;
+    width: 100%;
+    margin-top: 15px;
+
+    .custom-border-balance {
+      z-index: -1;
+    }
+
+    .my-balance-title {
+      font-size: 2.4rem;
+      position: relative;
+      padding: 0 10px;
+      color: #f7f7f760;
+      font-family: $superstar;
+    }
+
+    .user-balances {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 0 10px;
+      .total-energy {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .energy-title {
+          font-size: 1.8rem;
+          display: flex;
+          align-items: center;
+          color: #00c48d;
+          .energy-icon-svg {
+            width: 16px;
+            height: 16px;
+            position: relative;
+            top: -1px;
+            path {
+              fill: #00c48d !important;
+            }
+          }
+        }
+
+        .energy-count {
+          color: #f7f7f760;
+          font-size: 1.8rem;
+          span {
+            color: $white;
+          }
+        }
+      }
+
+      .total-coin {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .coin-title {
+          display: flex;
+          align-items: center;
+          gap: 1px;
+          color: $main-color;
+          font-size: 1.8rem;
+          position: relative;
+          left: 2px;
+          .coin-icon-svg {
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: -1px;
+          }
+        }
+        .coin-count {
+          color: $white;
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+
+  .items-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .items-title {
+      font-size: 2.4rem;
+      color: #f7f7f760;
+      font-family: $superstar;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 10px;
+    }
+
+    .user-inventory-container {
+      background-color: #1b2a36;
+      width: 100%;
+      height: 100px;
+      border: 1px solid $border-color;
+      border-top: none;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .inventory-item {
+        width: 70px;
+        position: relative;
+        &.empty-item {
+          opacity: 0.5;
+          filter: saturate(0);
+        }
+        span {
+          color: $white;
+          position: absolute;
+          top: -12.5px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  .social-container {
+    position: relative;
+    width: 100%;
+    height: 113px;
+    margin-top: 35px;
+    .custom-border-social {
+      z-index: -1;
+    }
+
+    .social-title {
+      font-size: 2.4rem;
+      color: #f7f7f760;
+      font-family: $superstar;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 10px;
+    }
+
+    .social-links-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      button {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        img {
+          width: 32px;
+          height: 32px;
+          &.not-linked {
+            filter: grayscale(1);
+          }
+        }
+        span {
+          color: $white;
+          font-size: 1.6rem;
+          margin-top: 5px;
+          line-height: 1;
+        }
+        .islinked-info {
+          font-size: 1.2rem;
+          color: $red;
+          position: relative;
+          top: -5px;
+          &.linked {
+            color: #00c48d;
+          }
+        }
+      }
+    }
+  }
+
+  .uid-container {
+    position: relative;
+    width: 100%;
+    height: 175px;
+    margin-top: 15px;
+    .uid-help {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.4rem;
+      color: #f7f7f760;
+      top: 10px;
+    }
+    .custom-border-uid {
+      z-index: -1;
+    }
+    .game-uid-title {
+      font-size: 2.4rem;
+      color: #f7f7f760;
+      font-family: $superstar;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+    }
+
+    .game-uid-container {
+      display: flex;
+      flex-direction: column;
+      padding: 0 10px;
+      width: 100%;
+      height: 125px;
+
+      overflow: auto;
+      .game-uid {
+        display: flex;
+        justify-content: space-between;
+        color: $white;
+        font-size: 2rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid $border-color;
+        }
+
+        .game-name {
+          color: #f7f7f770;
+        }
+      }
+    }
+  }
+}
+
+.items-tutorial {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 140px);
+  padding: 20px;
+  margin-bottom: 100px;
+  img {
+    z-index: -1;
+  }
+
+  .items-info {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 100%;
+    .item-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        margin: 0 auto;
+      }
+
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
+      h3 {
+        font-size: 3.6rem;
+        color: $white;
+        font-family: $superstar;
+        margin-top: 10px;
+        font-weight: 100;
+        text-align: center;
+      }
+      p {
+        font-size: 1.8rem;
+        color: $white;
+        margin-top: 10px;
+        text-align: left;
+        color: #bcbcbc;
+      }
+    }
+  }
+}

@@ -1,0 +1,225 @@
+.daily-checkin {
+  display: flex;
+  flex-direction: column;
+
+  .bonus-rewards-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .bonus-rewards-title {
+      text-align: center;
+      color: #a0aab4;
+    }
+
+    .points-title {
+      display: flex;
+      justify-content: space-between;
+
+      .points {
+        color: #a0aab450;
+
+        &.claimed {
+          color: #73f8be;
+        }
+      }
+    }
+
+    .bonus-rewards-progress-wrapper {
+      width: 100%;
+      top: 75%;
+      transform: translateY(-50%);
+      margin: 20px 0;
+      position: relative;
+      .electricity-gif-wrapper {
+        position: absolute;
+        width: 100%;
+        overflow: hidden;
+        height: 40px;
+        top: -10px;
+        display: flex;
+        transition: clip-path 0.5s;
+
+        .electricity-gif {
+          position: absolute;
+          width: 100px;
+          top: -40px;
+
+          @for $i from 1 through 7 {
+            &:nth-child(#{$i}) {
+              @if ($i == 1) {
+                left: 0;
+              } @else {
+                left: 1px * 39 * $i;
+              }
+              rotate: #{randomNum(85, 100)}deg;
+            }
+          }
+        }
+      }
+      .bonus-progress-container {
+        display: flex;
+        flex-direction: column;
+
+        .bonus-progress-bar {
+          display: flex;
+          background-color: #f7f7f707;
+          height: 10px;
+          .nnn-chip-asset {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 0px;
+            top: -15px;
+          }
+
+          .bonus-progress-inner {
+            background-color: #73f8be;
+            height: 100%;
+            width: 20%;
+            transition: width 0.5s;
+          }
+        }
+      }
+    }
+  }
+
+  .daily-check-container {
+    position: relative;
+    padding: 10px 0;
+    max-width: 500px;
+    margin: 0 auto;
+    max-width: 350px;
+    width: 100%;
+    height: 475px;
+    // background-image: url("/assets/daily-check-container.png");
+    // background-size: contain;
+    // background-repeat: no-repeat;
+    // background-position: center;
+
+    .daily-check-container-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      max-width: 350px;
+      z-index: 0;
+    }
+
+    .daily-claim-title {
+      position: relative;
+      color: $white;
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 7.5px;
+      font-size: clamp(1.5rem, 7vw, 2.5rem);
+      font-weight: 100;
+    }
+
+    .claim-days-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 0 10px;
+      overflow: hidden;
+      overflow-y: auto;
+      height: 400px;
+
+      .claim-box {
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100px;
+        height: 100px;
+        position: relative;
+
+        .light-element {
+          position: absolute;
+          background-color: red;
+          width: 50px;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 25px;
+          top: 0;
+          filter: blur(6px);
+          animation: light-anim 10s infinite;
+          @keyframes light-anim {
+            0% {
+              opacity: 0.5;
+            }
+            50% {
+              opacity: 1;
+            }
+            100% {
+              opacity: 0.5;
+            }
+          }
+          &.active {
+            background-color: #73f8be;
+          }
+        }
+
+        .claim-box-info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: absolute;
+          width: 100%;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          line-height: 1.15;
+          span:first-child {
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: $white;
+          }
+          span:last-child {
+            font-size: 1.4rem;
+            color: $main-color;
+          }
+        }
+
+        .claim-btn {
+          background-color: $main-color;
+          border: none;
+          border-top: 1px solid $border-color;
+          background-color: #f7f7f714;
+          font-size: 1.4rem;
+          width: 98%;
+          position: absolute;
+          color: white;
+          clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 1px,
+            100% 22px,
+            95px 100%,
+            4px 100%,
+            0% 22px,
+            0% 1.5px
+          );
+          bottom: 1px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          left: 50%;
+          transform: translateX(-50%);
+          cursor: pointer;
+          &.disabled {
+            background-color: #f7f7f714;
+            color: #a0aab4;
+            cursor: not-allowed;
+            font-size: 1.2rem;
+            line-height: 1;
+          }
+        }
+      }
+    }
+  }
+}

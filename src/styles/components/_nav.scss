@@ -1,0 +1,68 @@
+.nav-one {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding: 0 10px;
+  padding-bottom: 5px;
+  .nnn-logo {
+    width: 100px;
+    height: 50px;
+  }
+
+  .ton-connect-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $pixellari;
+    font-size: 1.6rem;
+    width: 100px;
+    border-radius: 50px;
+    padding: 5px 0;
+    color: #000;
+    background-color: $white;
+    border: none;
+    transition: transform 0.2s ease-in-out;
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  .disconnect-btn {
+    background-color: $main-color;
+    border: 1px solid $border-color;
+    padding: 5px 10px;
+    color: black;
+  }
+
+  .connect-btn {
+    color: black !important;
+    @include pixel-border;
+    [data-tc-button="true"] {
+      background-color: $main-color;
+      border-radius: 0;
+      gap: 0;
+      border: 1px solid $border-color;
+      padding: 0 5px;
+      padding-right: 10px;
+
+      path {
+        fill: black;
+      }
+    }
+
+    [data-tc-text="true"] {
+      color: black !important;
+      font-size: 1.6rem;
+      font-family: $pixellari !important;
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+
+[data-tc-dropdown="true"] {
+  border-radius: 0 !important;
+  border: 1px solid #50576c;
+  @include pixel-border;
+}

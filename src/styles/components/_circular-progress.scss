@@ -1,0 +1,33 @@
+// CircularProgress.scss
+.circular-progress {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .raffle-name-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    color: $white;
+  }
+
+  svg {
+    transform: rotate(-90deg);
+  }
+
+  &__circle {
+    transition: stroke-dashoffset 0.5s ease;
+    stroke-dasharray: 100;
+  }
+
+  &__background {
+    stroke: #4a5568; /* Unfilled color (background) */
+  }
+
+  &__progress {
+    stroke: $main-color; /* Filled color (progress) */
+  }
+}
